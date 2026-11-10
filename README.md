@@ -17,3 +17,5 @@ All commands are run from the root of the project, from a terminal:
 | `bun astro -- --help` | Get help using the Astro CLI                     |
 
 [astrojs our documentation](https://docs.astro.build).
+
+HostnameTarget / RoleKey Purposecpkg.devLanding Page & OverviewMinimalist splash page, installation one-liner, and quick-start guide.pkg.cpkg.devPackage Registry & IndexThe central index for package resolution, manifest search, and pre-built binaries.docs.cpkg.devDeveloper DocumentationAPI reference for build_space(), package spec guidelines, and system integration guides.get.cpkg.devShell / Binary InstallerEndpoint for zero-dependency bootstrap scripts (e.g., `curl -sSf https://get.cpkg.dev
