@@ -22,6 +22,8 @@
     --pad: clamp(20px, 5vw, 64px);
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
     --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    padding-top: 60px;
 }
 
 body {
@@ -139,7 +141,7 @@ nav.hidden {
         #868686 20%
     );
     background-position: 0;
-    -webkit-background-clip: text;
+    /*-webkit-background-clip: text;*/
     -webkit-text-fill-color: transparent;
     animation: shine 3s infinite linear;
     animation-fill-mode: forwards;
@@ -195,7 +197,81 @@ nav.hidden {
     }
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    transition: background 0.3s var(--ease);
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition:
+        transform 0.3s var(--ease),
+        opacity 0.3s var(--ease);
+}
+
+/* Hamburger Active/Open State Transformation */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+}
+
+.nav-right-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 @media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex !important;
+        z-index: 1001;
+    }
+
     .nav-links {
         position: fixed;
         top: 52px;
@@ -215,5 +291,17 @@ nav.hidden {
 
     .nav-links.active {
         transform: translateY(0);
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
     }
 }
