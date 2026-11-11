@@ -197,6 +197,79 @@ nav.hidden {
     }
 }
 
+footer {
+    bottom: 0;
+    padding: 60px 22px 40px;
+    border-top: 1px solid var(--border);
+    margin-top: 120px;
+}
+
+.footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-text {
+    font-size: 12px;
+    line-height: 1.33337;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--glt);
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.social-link:hover {
+    background: var(--glt);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
 .mobile-menu-btn {
     display: none;
     background: var(--surface);
