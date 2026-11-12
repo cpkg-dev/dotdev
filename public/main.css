@@ -372,6 +372,10 @@ footer {
     margin: 1rem 0;
 }
 
+ul {
+    padding-left: 40px;
+}
+
 @media (max-width: 768px) {
     .information-container {
         padding: 2.5rem;
