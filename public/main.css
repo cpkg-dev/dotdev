@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
 *,
 *::before,
@@ -9,6 +9,11 @@
 }
 
 :root {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
     --bg: #07070f;
     --surface: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.07);
@@ -32,6 +37,15 @@ body {
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 section {
@@ -123,12 +137,6 @@ nav.hidden {
     gap: 32px;
 }
 
-.nav-right-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 /* From Uiverse.io by neerajbaniwal edited */
 .btn-shine {
     position: absolute;
@@ -141,7 +149,6 @@ nav.hidden {
         #868686 20%
     );
     background-position: 0;
-    /*-webkit-background-clip: text;*/
     -webkit-text-fill-color: transparent;
     animation: shine 3s infinite linear;
     animation-fill-mode: forwards;
@@ -152,39 +159,7 @@ nav.hidden {
     white-space: nowrap;
     font-family: "Poppins", sans-serif;
 }
-@-moz-keyframes shine {
-    0% {
-        background-position: 0;
-    }
-    60% {
-        background-position: 180px;
-    }
-    100% {
-        background-position: 180px;
-    }
-}
-@-webkit-keyframes shine {
-    0% {
-        background-position: 0;
-    }
-    60% {
-        background-position: 180px;
-    }
-    100% {
-        background-position: 180px;
-    }
-}
-@-o-keyframes shine {
-    0% {
-        background-position: 0;
-    }
-    60% {
-        background-position: 180px;
-    }
-    100% {
-        background-position: 180px;
-    }
-}
+
 @keyframes shine {
     0% {
         background-position: 0;
@@ -239,10 +214,6 @@ footer {
     transition: color 0.3s;
 }
 
-.footer-links a:hover {
-    color: var(--glt);
-}
-
 .social-links {
     display: flex;
     gap: 12px;
@@ -261,13 +232,6 @@ footer {
     color: var(--text);
     transition: all 0.3s;
     font-size: 16px;
-}
-
-.social-link:hover {
-    background: var(--glt);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-    color: #ffffff;
 }
 
 .mobile-menu-btn {
@@ -298,7 +262,6 @@ footer {
         opacity 0.3s var(--ease);
 }
 
-/* Hamburger Active/Open State Transformation */
 .mobile-menu-btn.active span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
 }
@@ -311,34 +274,6 @@ footer {
     transform: translateY(-6px) rotate(-45deg);
 }
 
-.nav-right-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-content {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 52px;
-}
-
-.nav-right-container {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-right-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .information-container {
     display: flex;
     flex-direction: column;
@@ -348,11 +283,9 @@ footer {
     padding-top: 12vh;
     padding-bottom: 6vh;
     gap: 2rem;
-
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-
     box-sizing: border-box;
 }
 
@@ -408,17 +341,5 @@ ul {
 
     .nav-links.active {
         transform: translateY(0);
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
     }
 }

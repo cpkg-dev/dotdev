@@ -39,11 +39,12 @@ import logo from "../../public/icons/cpkg.png";
 
         <install-cpkg>
             <section class="information-container">
+                <h2>Quick install cpkg:</h2>
                 <div class="install-box">
                     <div class="install-header">
-                        <span class="install-label">Install via sh / bash</span>
+                        <span class="install-label">Install via GitHub</span>
                         <a
-                            href="https://get.ametrine.cc/cpkg.sh"
+                            href="https://github.com/cpkg-dev/cpkg/blob/master/justfile"
                             class="inspect-link"
                             target="_blank"
                             rel="noopener"
@@ -52,10 +53,13 @@ import logo from "../../public/icons/cpkg.png";
                         </a>
                     </div>
                     <div class="install-command-row">
-                        <code id="install-cmd">
-                            <span class="prompt">$</span> curl -fsSL
-                            https://get.cpkg.dev | sh
-                        </code>
+                        <div class="code-wrapper">
+                            <code id="install-cmd">
+                                <span class="prompt">$</span> git clone
+                                https://github.com/cpkg-dev/cpkg && just
+                                make-cpkg
+                            </code>
+                        </div>
                         <button
                             type="button"
                             class="copy-btn"
@@ -69,7 +73,8 @@ import logo from "../../public/icons/cpkg.png";
 
                 <script>
                     function copyInstallCmd(btn) {
-                        const cmd = "curl -fsSL https://get.cpkg.dev | sh";
+                        const cmd =
+                            "git clone https://github.com/cpkg-dev/cpkg && just make-cpkg";
                         navigator.clipboard.writeText(cmd).then(() => {
                             const original = btn.textContent;
                             btn.textContent = "Copied!";
@@ -99,24 +104,10 @@ import logo from "../../public/icons/cpkg.png";
                     cpkg-team, maintaining cpkg and any other projects we may be
                     a part of or create in the distant future.
                 </p>
-                <!-- <p>So far we have made:</p> -->
-                <!-- <ul> -->
-                <!-- <li>cpkg</li> -->
-                <!-- <li>clonec</li> -->
-                <!-- <li>feudc</li> -->
-                <!-- <li>patchc</li> -->
-                <!-- </ul> -->
 
-                <h1>Do you use Ai?</h1>
-                <p>no.</p>
                 <p>
-                    Ai is banned from all parts of the cpkg project, the only
-                    place it has ever been used is to make mockups of
-                    pre-existing ideas we have had.
-                </p>
-                <p>
-                    None of that Ai code is part of the codebase. None ever
-                    will, cpkg exists for humans and humans alone.
+                    More can be found on our about page{" "}
+                    <a href="/about">here</a>.
                 </p>
             </section>
         </information>
@@ -176,10 +167,19 @@ import logo from "../../public/icons/cpkg.png";
         display: none;
     }
 
+    .information-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
     .install-box {
         background-color: #14151a;
         border: 1px solid #2a2d37;
         border-radius: 8px;
+        width: 100%;
         max-width: 600px;
         font-family:
             system-ui,
@@ -187,6 +187,7 @@ import logo from "../../public/icons/cpkg.png";
             sans-serif;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
     }
 
     .install-header {
@@ -217,6 +218,14 @@ import logo from "../../public/icons/cpkg.png";
         justify-content: space-between;
         padding: 14px 16px;
         gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .code-wrapper {
+        flex: 1;
+        min-width: 0; /* Crucial for allowing flex child to shrink and enable scrolling */
+        overflow-x: auto;
     }
 
     #install-cmd {
@@ -225,7 +234,7 @@ import logo from "../../public/icons/cpkg.png";
         font-size: 0.9rem;
         color: #e2e6f0;
         white-space: nowrap;
-        overflow-x: auto;
+        display: block;
         user-select: all;
     }
 
@@ -275,7 +284,7 @@ import logo from "../../public/icons/cpkg.png";
 
         .mobile-title {
             display: block;
-            margin-top: 0px; /* Space between logo and text */
+            margin-top: 0px;
             font-size: clamp(2rem, 8vw, 3rem);
             font-weight: 700;
             line-height: 0.95;

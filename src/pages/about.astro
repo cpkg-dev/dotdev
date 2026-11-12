@@ -1,10 +1,166 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from "../layouts/Footer.astro";
+import { Image } from "astro:assets";
+import logo from "../../public/icons/cpkg.png";
 ---
 
 <html lang="en">
     <Layout />
     <body>
-        <p>hi</p>
+        <main class="container">
+            <section class="hero">
+                <div class="hero-container">
+                    <h1>
+                        <span>about us</span>
+                    </h1>
+
+                    <div class="hero-logo-wrapper">
+                        <Image
+                            src={logo}
+                            alt="cpkg Logo"
+                            class="hero-logo"
+                            loading="eager"
+                            fetchpriority="high"
+                        />
+                    </div>
+                    <div class="mobile-title">
+                        <span>about us</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <hr class="section-divider" />
+
+        <information>
+            <section class="information-container">
+                <h1>Who are we?</h1>
+                <p>
+                    We are the cpkg-team, started by Noticxs, tasked to make a
+                    simple and intuitive way to install packages and build
+                    projects using C.
+                </p>
+                <p>
+                    So cpkg was made, and from that project we started the
+                    cpkg-team, maintaining cpkg and any other projects we may be
+                    a part of or create in the distant future.
+                </p>
+            </section>
+        </information>
+
+        <hr class="section-divider" />
+
+        <information>
+            <section class="information-container">
+                <h1>Do you use Ai?</h1>
+                <p>no.</p>
+                <p>
+                    Ai is banned from all parts of the cpkg project, the only
+                    place it has ever been used is to make mockups of
+                    pre-existing ideas we have had.
+                </p>
+                <p>
+                    None of that Ai code is part of the codebase. None ever will
+                    be. cpkg and the cpkg-team to make exists to make things for
+                    humans and humans alone.
+                </p>
+            </section>
+        </information>
+
+        <hr class="section-divider" />
+
+        <Footer />
     </body>
 </html>
+
+<style>
+    .hero {
+        padding-top: 12vh;
+        padding-bottom: 6vh;
+    }
+
+    .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16rem;
+    }
+
+    .hero-container h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin: 0;
+    }
+
+    .hero-container h1 span {
+        background: linear-gradient(180deg, var(--text) 0%, var(--text) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-logo-wrapper {
+        flex-shrink: 0;
+    }
+
+    .hero-logo {
+        width: 250px;
+        height: auto;
+        display: block;
+        filter: drop-shadow(5px 5px 5px var(--primary));
+    }
+
+    .flagship-tag {
+        margin-top: 3rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .mobile-title {
+        display: none;
+    }
+
+    .flagship-tag {
+        margin-top: 3rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .mobile-title {
+        display: none;
+    }
+
+    .information-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        .hero-container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .hero-container h1 {
+            display: none;
+        }
+
+        .mobile-title {
+            display: block;
+            margin-top: 0px;
+            font-size: clamp(2rem, 8vw, 3rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+    }
+</style>
