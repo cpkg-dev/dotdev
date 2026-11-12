@@ -339,7 +339,47 @@ footer {
     gap: 12px;
 }
 
+.information-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4rem;
+    padding-top: 12vh;
+    padding-bottom: 6vh;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+.information-container h1 {
+    color: whitesmoke;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0;
+    text-align: left;
+}
+
+.section-divider {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.12);
+    margin: 1rem 0;
+}
+
 @media (max-width: 768px) {
+    .information-container {
+        padding: 2.5rem;
+        padding-top: 12vh;
+        padding-bottom: 6vh;
+        gap: 1.5rem;
+    }
+
     .mobile-menu-btn {
         display: flex !important;
         z-index: 1001;
